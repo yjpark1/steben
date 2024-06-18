@@ -117,7 +117,7 @@ class NodeFeature:
         shortest_paths = find_shortest_paths_from_nodes(adj, terminals, node_sorted)
         
         features = {}
-        for v in instance.nodes:
+        for v in node_sorted:
             feature = np.zeros(K)
             d = sorted([shortest_paths.get((t, v), (0, ))[0] / max_cost for t in terminals if t not in partial_solution])
             
