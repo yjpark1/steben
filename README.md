@@ -32,7 +32,7 @@ This repository contains baselines methods and dataset generator.
 │   ├── cherrypick
 │   ├── common
 │   └── heuristic
-└── respack # dataset generator
+└── stpgen # dataset generator
     ├── datasets
     ├── envs
     └── solvers
@@ -58,11 +58,11 @@ This repository contains baselines methods and dataset generator.
 
 ### Usage
 Please refer each baseline folder.
-- AM: baselines/am/readme.md
-- Cherrypick: baselines/cherrypick/readme.md
-- Pointer Network: baselines/pointernet/readme.md
-- DIFUSCO: baselines/difusco/readme.md
-- DIMES: baselines/dimes/readme.md
+- AM: `baselines/am/readme.md`
+- Cherrypick: `baselines/cherrypick/readme.md`
+- Pointer Network: `baselines/pointernet/readme.md`
+- DIFUSCO: `baselines/difusco/readme.md`
+- DIMES: `baselines/dimes/readme.md`
 
 
 
