@@ -4,7 +4,7 @@ This directory contains the implementation of the AM algorithm.
 
 ## Usage
 
-To run the AM algorithm, use the `run_am.py` script. Here is a basic example:
+To run the AM algorithm, use the `python baselines/am/run_am.py` script. Here is a basic example:
 
 ```python
 from dataclasses import dataclass

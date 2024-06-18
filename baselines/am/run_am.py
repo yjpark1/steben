@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from baselines.am.am import main as am_stp_main, EvaluateModel
 import glob
 
 
@@ -64,6 +63,11 @@ class Args:
 
 
 if __name__ == "__main__":
+    import sys
+    sys.path.insert(0, './')
+    
+    from baselines.am.am import main as am_stp_main, EvaluateModel
+    
     # training
     args = Args(gpu_id=0, graph_type='ER', num_nodes=10, testdata_dir="testdata_gaussian/synthetic_STP_dataset_test_erdos_renyi_n10_scipjack/")
     am_stp_main(args)

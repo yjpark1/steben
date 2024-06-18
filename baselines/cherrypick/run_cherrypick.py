@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 import torch
-from baselines.cherrypick.run import run
 
 
 @dataclass
@@ -91,6 +90,11 @@ class Args:
 
 
 if __name__ == "__main__":
+    import sys
+    sys.path.insert(0, './')
+    
+    from baselines.cherrypick.run import run
+    
     # training
     args = Args(log_dir="baselines/cherrypick/checkpoints", graph_type="ER", num_nodes=10,
                 filename_for_dqn_weights="dqn_weight@ER10g")

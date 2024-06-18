@@ -4,7 +4,7 @@ This directory contains the implementation of the CherryPick algorithm.
 
 ## Usage
 
-To run the CherryPick algorithm, use the `run_cherrypick.py` script. Here is a basic example:
+To run the CherryPick algorithm, use the `python baselines/cherrypick/run_cherrypick.py` script. Here is a basic example:
 
 ``` python
 from dataclasses import dataclass
