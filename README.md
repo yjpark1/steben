@@ -31,7 +31,9 @@ This repository contains baselines methods and dataset generator.
 │   ├── am
 │   ├── cherrypick
 │   ├── common
-│   └── heuristic
+│   ├── difusco
+│   ├── heuristic
+│   └── pointer_network
 └── stpgen # dataset generator
     ├── datasets
     ├── envs
