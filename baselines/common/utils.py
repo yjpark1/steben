@@ -206,12 +206,12 @@ if __name__ == "__main__":
     sys.path.append('.')
     
     
-    class TestEnv(AbstractSTPEnv):
-        def reset(self):
-            print('ok')
+    # class TestEnv(AbstractSTPEnv):
+    #     def reset(self):
+    #         print('ok')
             
-        def step(self):
-            print('ok')
+    #     def step(self):
+    #         print('ok')
     
     
     from stpgen.datasets.synthetic.instance import STPInstance_erdos_renyi
