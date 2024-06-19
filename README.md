@@ -24,6 +24,7 @@ The training and test datasets can be downloaded from the following link:
 The datasets are stored in pickle files with networkx graph formats. For larger node sizes, the data is split across multiple pickle files.
 
 ## Getting Started
+### Directories
 This repository contains baselines methods and dataset generator.
 ```
 .
@@ -32,11 +33,13 @@ This repository contains baselines methods and dataset generator.
 │   ├── cherrypick
 │   ├── common
 │   ├── difusco
+│   ├── dimes
+│   ├── dimes_tsp
 │   ├── heuristic
 │   └── pointer_network
+│
 └── stpgen # dataset generator
     ├── datasets
-    ├── envs
     └── solvers
 ```
 
@@ -58,7 +61,37 @@ This repository contains baselines methods and dataset generator.
     pip install -r requirements.txt
     ```
 
+### Using SCIP-Jack Solver
+If you want to use SCIP-Jack solver, you need to specify the `path_scipjack` for `SCIPJackRunner` in `steben/stpgen/solvers/scipjack.py`.
+
+```python
+class SCIPJackRunner:
+    """run SCIPJack command in terminal 
+    """
+    def __init__(self, path_setting=None, timelimit=None) -> None:
+        self.path_setting = 'stpsolver/settingsfile.set' if path_setting is None else path_setting
+        self.timelimit = timelimit
+        self._set_scipjack_path()
+    
+    def _set_scipjack_path(self):
+        os_ = platform.platform().lower()
+        if 'mac' in os_:
+            path_scipjack = 'stpsolver/build_mac_arm/scip/bin/applications/scipstp'
+        elif 'linux' in os_:
+            path_scipjack = 'stpsolver/build_linux/scip/bin/applications/scipstp'
+        else:
+            raise ValueError(f"Unsupported OS {os_}")
+        self.path_scipjack = path_scipjack
+```
+
 ### Usage
+#### Datasets generation
+```bash
+python generate_train_data.py
+python generate_test_data.py
+```
+
+#### Baselines
 Please refer each baseline folder.
 - AM: `baselines/am/readme.md`
 - Cherrypick: `baselines/cherrypick/readme.md`
